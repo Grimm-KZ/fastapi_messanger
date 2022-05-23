@@ -1,5 +1,8 @@
-from sqlalchemy import MetaData, Table, Column, Integer, String, Text, Date
+import datetime
+
+from sqlalchemy import MetaData, Table, Column, Integer, String, Text, DateTime
 from config.db import meta
+from sqlalchemy_utils import URLType
 import sqlalchemy as sa
 
 
@@ -13,5 +16,6 @@ tb_messages = Table(
     Column('sender', String(255)),
     Column('receiver', String(255)),
     Column('message', Text),
-    # Column('date', Date),
+    Column('url', URLType),
+    Column('date', DateTime, default=datetime.datetime.now()),
 )
