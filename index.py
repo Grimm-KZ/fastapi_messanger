@@ -6,7 +6,7 @@ from schemas.sch_messages import Messages
 from fastapi import FastAPI, WebSocket
 from fastapi.responses import HTMLResponse
 import shutil
-
+import document
 
 app = FastAPI()
 
@@ -17,7 +17,8 @@ html = """
         <title>Chat</title>
     </head>
     <body>
-        <h1>WebSocket Chat</h1>
+        <h1>Simple Messanger</h1>
+        <h4>Type messages, that you want to save in DB. APIs for messanger you may see in http://127.0.0.1:8000/docs#</h4>
         <form action="" onsubmit="sendMessage(event)">
             <input type="text" id="messageText" autocomplete="off"/>
             <button>Send</button>
